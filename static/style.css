@@ -55,6 +55,26 @@
     padding-bottom: 64px;
 }
 
-.bottom-form{
 
+
+
+input[type = text]{
+    width: 35%;
+    height: 80px;
+}
+
+input[type = submit]{
+    background-color: forestgreen ;
+    margin-bottom: 40px;
+    margin-right: 29%;
+}
+
+.bottom-bar{
+    padding: 32px;
+    background-color: lightblue;
+    border-top: black;
+}
+
+.bottom-bar h6 {
+    margin-left: 40px;
 }
