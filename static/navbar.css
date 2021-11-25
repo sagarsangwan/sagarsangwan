@@ -1,0 +1,48 @@
+.header-container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+
+.text-align {
+    text-align: center;
+
+}
+
+
+.navbar {
+
+    margin-left: 32px;
+    margin-right: 32px;
+    border-radius: 72px;
+}
+
+.navbar ul li {
+    float: right;
+    padding: 16px;
+    list-style: none;
+
+}
+
+.navbar logo {
+    margin-right: 40px;
+    float: left;
+    
+    padding-left: 128px;
+
+}
+
+
+
+.navbar ul li a {
+    
+    text-decoration: none;
+    text-align: center;
+
+}
+
+
+.navbar :active {
+    background: #000;
+    color: blue;
+}
