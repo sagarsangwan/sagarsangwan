@@ -11,7 +11,7 @@
 
 
 .navbar{
-    background-color: brown;
+    
     margin-left: 32px;
     margin-right: 32px;
     border-radius: 72px;
@@ -24,6 +24,7 @@
     
 }
 .navbar logo{
+    mar 40px
     float: left;
     border-radius: 64px;
     padding-left: 128px;
@@ -42,4 +43,18 @@
 .navbar :active{
     background: #000;
     color: blue;
+}
+
+
+.text{
+    text-align: center;
+    padding-top: 64px;
+}
+
+.bottom-paragraph{
+    padding-bottom: 64px;
+}
+
+.bottom-form{
+
 }
