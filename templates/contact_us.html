@@ -11,15 +11,28 @@
             Feel free to email me at iamsagarsangwan@gmail.com<br>
             Or use the form below
         </p>
-    
+
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Your email" aria-label="your email">
+            </div><br> <br><br>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Leave comments here</label>
+            </div>
+
+        </div><br> 
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+        </form>
+
+    </div>
 
 </div>
-
-</div>
-<form class="bottom-form">
-    <input type="name" placeholder="Name">
-    <input type="email" placeholder="Email"><br><br>
-    <input type="text" placeholder="Your message"><br><br>
-    <input type="submit" placeholder="submit">
-</form>
 {% endblock %}
