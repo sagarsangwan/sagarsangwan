@@ -3,8 +3,9 @@
 {% block content %}
 
 <body>
-
+   
     
+
     <div class="container">
         <div class="row header-container">
             <div class="col">
@@ -36,31 +37,7 @@
             </div>
         </div>
 
-    </div>
-    <div class="container text">
-        <h1>Get in touch</h1>
-        <div class="bottom-paragraph">
-            <p>
-                Have a project for me, or just want to say hii?<br>
-                Feel free to email me at iamsagarsangwan@gmail.com<br>
-                Or use the form below
-            </p>
-        </div>
-        <form class="bottom-form">
-            <input type="name" placeholder="Name">
-            <input type="email" placeholder="Email"><br><br>
-            <input type="text" placeholder="Your message"><br><br>
-            <input type="submit" placeholder="submit">
-        </form>
-
-    </div>
-    <footer>
-        <div class="bottom-bar">
-            <h6>Designed and developed by Sagar Sangwan</h4>
-
-        </div>
-    </footer>
-
+    {% include "footer.html" %}
 </body>
 
 

@@ -11,12 +11,12 @@
 
 
 
-input[type = text]{
+.input[type = text]{
     width: 35%;
     height: 80px;
 }
 
-input[type = submit]{
+bottom-form.input[type = submit]{
     background-color: forestgreen ;
     margin-bottom: 40px;
     margin-right: 29%;
