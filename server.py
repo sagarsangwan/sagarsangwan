@@ -1,6 +1,9 @@
 from flask import Flask, app, render_template
 
+
 app = Flask(__name__)
+
+
 
 @app.route("/")
 def home():
@@ -9,9 +12,10 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/contact_us")
-def contact_us():
-    return render_template("contact_us.html")
+@app.route("/contact", methods = ['GET', 'POST'])
+def contact():
+
+    return render_template("contact.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
