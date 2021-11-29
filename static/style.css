@@ -22,4 +22,13 @@ body{
     height: 70vh;
 }
 
+.quotes-container{
+    text-align: center;
+    margin-bottom: 40px;
+    background: #f1f1f1;
+    padding: 32px;
+    border: solid 1px #e1e1e1;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
+}
     
