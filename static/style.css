@@ -19,7 +19,7 @@ body{
     height: 40px;
 }
 .height-adjust{
-    height: 70vh;
+    min-height: 70vh;
 }
 
 .quotes-container{
@@ -32,3 +32,4 @@ body{
     box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
 }
     
+
