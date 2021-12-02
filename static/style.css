@@ -32,4 +32,15 @@ body{
     box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
 }
     
+.col-padding{
+    padding-top: 32px;
 
+}
+
+.col-padding-down{
+    padding-bottom: 40px;
+}
+
+.padding-bio{
+    padding: 40px;
+}
