@@ -1,24 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<form class="row height-adjust" method="POST" action="/dashboard">
+<div class="row height-adjust">
     <div class="col">
-        <input type="text" name="username" required class="form-control" placeholder="enter user name"
-            aria-label="First name">
+        <h1 class="padding-bottom-small">Messages</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">User name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in value %}
+                <tr>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-    <div class="col">
-        <input  name="password" required class="form-control" placeholder="enter password"
-            aria-label="your email">
-    </div><br> <br><br>
+</div>
 
 
-    <br>
-    <div class="col-12">
-        <button class="btn btn-primary" type="submit" value="Login">Submit</button>
-    </div>
-</form>
-
-<h1>{{info}}</h1>
 
 {% endblock %}

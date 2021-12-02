@@ -37,10 +37,15 @@ body{
 
 }
 
-.col-padding-down{
+.padding-bottom-medium{
     padding-bottom: 40px;
 }
 
 .padding-bio{
     padding: 40px;
+}
+
+.padding-bottom-small{
+    padding-bottom: 16px;
+
 }
