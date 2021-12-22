@@ -1,7 +1,7 @@
 import os
 from flask import Flask, app, render_template, request
 from flask_mysqldb import MySQL
-from projects.Dictionary import dict
+from projects.dictionary import dict
 
 
 
