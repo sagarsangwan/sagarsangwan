@@ -2,7 +2,7 @@ import json
 # import difflib 
 from difflib import get_close_matches, SequenceMatcher
 
-data = json.load(open("projects/dictionary/data.json"))
+data = json.load(open("projects/wordbook/data.json"))
 
 
 # input                         output
