@@ -1,6 +1,9 @@
 import os
 from flask import Flask, app, render_template, request
 from flask_mysqldb import MySQL
+from projects.Dictionary import dict
+
+
 
 
 
@@ -9,7 +12,8 @@ app.config['MYSQL_USER'] = os.environ.get("DB_USER_NAME")
 app.config['MYSQL_PASSWORD'] = os.environ.get("DB_PASSWORD")
 app.config['MYSQL_DB'] = os.environ.get("DB_DATABASE_NAME")
 app.config['MYSQL_HOST'] = os.environ.get("DB_HOST_NAME")
-app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
+# app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
+app.config['MYSQL_PORT'] = 3306
 mysql = MySQL(app)
 
     
@@ -19,7 +23,9 @@ mysql = MySQL(app)
 def home():
     return render_template("pages/home.html")
 
-
+@app.route("/projects")
+def projects():
+    return render_template("pages/projects.html")
 
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
@@ -38,8 +44,16 @@ def contact():
         
     return render_template("pages/contact.html")
 
+@app.route("/dictionary", methods = ["GET","POST"])
+def dictionary():
+    if request.method == "POST":
+        word = request.form['word']
+        data, status, metadata = dict.translate(word, None)
 
+        
+        return render_template("pages/dictionary.html", key = (data, status, metadata))
     
+    return render_template("pages/dictionary.html", key = ())
         
     
 

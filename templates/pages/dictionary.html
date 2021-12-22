@@ -13,21 +13,27 @@
         <div class="col-12">
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>
+        <div class="row">
+            <div class="col col-padding">
+                <table class="table">
+                    <tbody>
+                        {% if key[1] == "success" %}
+                        {% for i in key[0] %}
+                        <tr>
+                            <td>{{i}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <h1>sagar</h1>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
         </form>
-    </div>
-    <div class="row">
-        {% if output %}
-            {% for i in output %}
-            <h1>{{ i }}</h1>
-            {% endfor %}
-        {% else %}
-            <h1>sagar</h1>
-        {% endif %}
     </div>
 
 
 </div>
-
-
 
 {% endblock %}
