@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-7">
+            <form class="row" method="POST" action="">
+                <div class="col-xs-12 col-md-4 padding-bottom-small">
+                    <input type="text" name="word" required class="form-control" placeholder="First name"
+                        aria-label="First name">
+                </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+        </form>
+    </div>
+    <div class="row">
+        {% if output %}
+            {% for i in output %}
+            <h1>{{ i }}</h1>
+            {% endfor %}
+        {% else %}
+            <h1>sagar</h1>
+        {% endif %}
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
