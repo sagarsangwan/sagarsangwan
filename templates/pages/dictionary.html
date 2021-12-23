@@ -32,7 +32,7 @@
             {% elif key[1]=="similar_word" %}
             <h3>did you mean : </h3>
             {% for i in key[2] %}
-            <a href="{{i}}"> {{i}} </a><br>
+            <a href="dictionary?word={{i}}"> {{i}} </a><br>
             {% endfor %}
             {% elif key[1] == "unsuccessful" %}
             <h1> {{key[2]}} </h1>
