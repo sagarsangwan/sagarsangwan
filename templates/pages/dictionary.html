@@ -1,39 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="container">
+<div class="container height-adjust">
     <div class="row">
         <div class="col-xs-12 col-md-7">
-            <form class="row" method="POST" action="">
+            <form class="row" method="GET" action="">
                 <div class="col-xs-12 col-md-4 padding-bottom-small">
                     <input type="text" name="word" required class="form-control" placeholder="Enter a word"
                         aria-label="First name">
                 </div>
+                <div class="col-xs-12 col-md-4 padding-bottom-small">
+                    <button type="submit" class="btn btn-primary">submit</button>
+                </div>
+
+            </form>
         </div>
-        <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
-        <div class="row">
-            <div class="col col-padding">
-                <table class="table">
-                    <tbody>
-                        {% if key[1] == "success" %}
-                        {% for i in key[0] %}
-                        <tr>
-                            <td>{{i}}</td>
-                        </tr>
-                        {% endfor %}
-                        {% else %}
-                        <h1>sagar</h1>
-                        {% endif %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        </form>
     </div>
+    <div class="row">
+        <div class="col col-padding">
 
+            {% if key[1] == "success" %}
+            <table class="table">
+                <tbody>
+                    {% for i in key[0] %}
+                    <tr>
+                        <td>{{i}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% elif key[1]=="similar_word" %}
+            <h3>did you mean : </h3>
+            {% for i in key[2] %}
+            <a href="{{i}}"> {{i}} </a><br>
+            {% endfor %}
+            {% elif key[1] == "unsuccessful" %}
+            <h1> {{key[2]}} </h1>
+            {% endif %}
 
+        </div>
+    </div>
 </div>
-
 {% endblock %}

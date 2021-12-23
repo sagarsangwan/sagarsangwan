@@ -13,7 +13,6 @@ app.config['MYSQL_PASSWORD'] = os.environ.get("DB_PASSWORD")
 app.config['MYSQL_DB'] = os.environ.get("DB_DATABASE_NAME")
 app.config['MYSQL_HOST'] = os.environ.get("DB_HOST_NAME")
 app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
-
 mysql = MySQL(app)
 
     
@@ -44,16 +43,13 @@ def contact():
         
     return render_template("pages/contact.html")
 
-@app.route("/dictionary", methods = ["GET","POST"])
+@app.route("/dictionary", methods = ["GET"])
 def dictionary():
-    if request.method == "POST":
-        word = request.form['word']
-        data, status, metadata = dict.translate(word, None)
+    word1 = request.args.get('word')
+    data, status, metadata = dict.translate(word1)
+    return render_template("pages/dictionary.html", key = (data, status, metadata))  
 
-        
-        return render_template("pages/dictionary.html", key = (data, status, metadata))
-    
-    return render_template("pages/dictionary.html", key = ())
+  
         
     
 
