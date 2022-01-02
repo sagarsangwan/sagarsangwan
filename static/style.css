@@ -49,3 +49,8 @@ body{
     padding-bottom: 16px;
 
 }
+.padding-paragraph{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 24px;
+}
