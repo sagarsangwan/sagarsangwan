@@ -1,4 +1,46 @@
-<footer class="page-footer font-small special-color-dark pt-4">
+<footer>
+    <div class="container footer">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <form class="row" method="POST" action="">
+                    <div class="col-12 padding-bottom-small">
+                        <p>
+                            Put your email address, message and get started
+                        </p>
+                    </div>
+                    <div class="col-12 padding-bottom-small">
+                        <input type="text" name="user_name" required class="form-control" placeholder="First name"
+                            aria-label="First name">
+                    </div>
+                    <div class="col-12 padding-bottom-small">
+                        <input type="email" name="email" required class="form-control" placeholder="Your email"
+                            aria-label="your email">
+                    </div>
+                    <div class="col-12 padding-bottom-small">
+                        <textarea rows="4" class="form-control" placeholder="Leave a comment here"
+                            name="message"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-dark" type="submit">Submit</button>
+                        <i>{{info}}</i>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- <footer class="page-footer font-small special-color-dark pt-4">
 
 
     <div class="container footer">
@@ -35,4 +77,4 @@
         </ul>
     </div>
 
-</footer>
+</footer> -->
