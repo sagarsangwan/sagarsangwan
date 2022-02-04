@@ -62,7 +62,14 @@ body{
 }
 a{
     text-decoration: none;
+    color: #ed294e;
 }
+
+a:hover {
+    color: rgb(189, 0, 38);
+    border-bottom: dashed 1px rgb(189, 0, 38);
+}
+
 .border-radius-2{
     border-radius: 2.25rem;
 }
@@ -85,4 +92,8 @@ a{
     padding: 0.25rem;
     max-width: 100%;
     height: auto;
+}
+
+.links{
+    font-size: 24px;
 }
