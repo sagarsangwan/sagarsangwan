@@ -2,32 +2,23 @@ import os
 from flask import Flask, app, render_template, request
 from flask_mysqldb import MySQL
 from projects.wordbook import dict
+from dotenv import load_dotenv
 
-
-
-
+load_dotenv('.env')
 
 app = Flask(__name__)
-app.config['MYSQL_USER'] = os.environ.get("DB_USER_NAME")
-app.config['MYSQL_PASSWORD'] = os.environ.get("DB_PASSWORD")
-app.config['MYSQL_DB'] = os.environ.get("DB_DATABASE_NAME")
-app.config['MYSQL_HOST'] = os.environ.get("DB_HOST_NAME")
-app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
+app.config['MYSQL_USER'] = os.environ.get("MYSQL_USER")
+app.config['MYSQL_PASSWORD'] = os.environ.get("MYSQL_PASSWORD")
+app.config['MYSQL_DB'] = os.environ.get("MYSQL_DB")
+app.config['MYSQL_HOST'] = os.environ.get("MYSQL_HOST")
+app.config['MYSQL_PORT'] = 3306
+# app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
 mysql = MySQL(app)
+print(os.environ.get("DB_HOST_NAME"))
 
-    
 
-
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template("pages/home.html")
-
-@app.route("/projects")
-def projects():
-    return render_template("pages/projects.html")
-
-@app.route("/contact", methods=['GET', 'POST'])
-def contact():
     if request.method == "POST":
         details = request.form
         names = details['user_name']
@@ -38,20 +29,16 @@ def contact():
                     (names, emails, messages))
         mysql.connection.commit()
         cur.close()
+        return render_template("pages/home.html", info="Message sent sucessfully")
 
-        return render_template("pages/contact.html", info ="Message sent sucessfully")
-        
-    return render_template("pages/contact.html")
+    return render_template("pages/home.html")
 
-@app.route("/dictionary", methods = ["GET"])
+
+@app.route("/dictionary", methods=["GET"])
 def dictionary():
     word1 = request.args.get('word')
     data, status, metadata = dict.translate(word1)
-    return render_template("pages/dictionary.html", key = (data, status, metadata))  
-
-  
-        
-    
+    return render_template("pages/dictionary.html", key=(data, status, metadata))
 
 
 @app.route("/dashboard", methods=["POST", "GET"])
@@ -67,13 +54,9 @@ def dashboard():
             cur.execute("SELECT * FROM messages")
             tables = cur.fetchall()
             cur.close()
-            return render_template("pages/dashboard.html", value = list(tables))
+            return render_template("pages/dashboard.html", value=list(tables))
         else:
             return render_template("pages/login.html")
-             
-        
-    
-        
 
 
 @app.errorhandler(404)

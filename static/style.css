@@ -54,3 +54,51 @@ body{
     padding-bottom: 32px;
     font-size: 24px;
 }
+.footer{
+    background: #f1f1f1;
+}
+.footer-copyright{
+    font-size: 13px;
+}
+a{
+    text-decoration: none;
+    color: #ed294e;
+}
+
+a:hover {
+    color: rgb(189, 0, 38);
+    border-bottom: dashed 1px rgb(189, 0, 38);
+}
+
+.border-radius-2{
+    border-radius: 2.25rem;
+}
+.input-feild-shadow{
+    box-shadow: 0 10px 18px #ccc;
+    border-radius: 12px;
+    border: none;
+    padding: 8px 16px
+}
+@media (max-width: 768px){
+    .footer{
+        width: auto;
+        margin: 0 11px;
+    }}
+
+.social-media-icons{
+    margin-top: 40px;
+}
+.project-thumbnail{
+    padding: 0.25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.links{
+    font-size: 24px;
+}
+.button{
+    border-radius: 12px;
+    border: none;
+    padding: 8px 16px
+}
