@@ -81,3 +81,8 @@ a{
 .social-media-icons{
     margin-top: 40px;
 }
+.project-thumbnail{
+    padding: 0.25rem;
+    max-width: 100%;
+    height: auto;
+}
