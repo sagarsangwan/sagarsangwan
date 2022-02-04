@@ -57,3 +57,9 @@ body{
 .footer{
     background: #f1f1f1;
 }
+.footer-copyright{
+    font-size: 13px;
+}
+a{
+    text-decoration: none;
+}
