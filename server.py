@@ -14,7 +14,6 @@ app.config['MYSQL_HOST'] = os.environ.get("MYSQL_HOST")
 app.config['MYSQL_PORT'] = 3306
 # app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
 mysql = MySQL(app)
-print(os.environ.get("DB_HOST_NAME"))
 # to remove special characters from string
 
 
