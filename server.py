@@ -15,6 +15,16 @@ app.config['MYSQL_PORT'] = 3306
 # app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
 mysql = MySQL(app)
 print(os.environ.get("DB_HOST_NAME"))
+# to remove special characters from string
+
+
+def clean(string):
+    clean_string = ""
+    valid_character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ,.!?()[]{}<>\\/'
+    for char in string:
+        if char.isalnum() or char in valid_character:
+            clean_string += char
+    return clean_string
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -22,8 +32,11 @@ def home():
     if request.method == "POST":
         details = request.form
         names = details['user_name']
+        user_name = clean(names)
         emails = details['email']
         messages = details['message']
+        message = clean(messages)
+        print(user_name, emails, message)
         cur = mysql.connection.cursor()
         cur.execute("INSERT INTO messages (user_name, email, message) VALUES (%s, %s, %s)",
                     (names, emails, messages))
