@@ -7,12 +7,11 @@ from dotenv import load_dotenv
 load_dotenv('.env')
 
 app = Flask(__name__)
-app.config['MYSQL_USER'] = os.environ.get("MYSQL_USER")
-app.config['MYSQL_PASSWORD'] = os.environ.get("MYSQL_PASSWORD")
-app.config['MYSQL_DB'] = os.environ.get("MYSQL_DB")
-app.config['MYSQL_HOST'] = os.environ.get("MYSQL_HOST")
-app.config['MYSQL_PORT'] = 3306
-# app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
+app.config['MYSQL_USER'] = os.environ.get("DB_USER_NAME")
+app.config['MYSQL_PASSWORD'] = os.environ.get("DB_PASSWORD")
+app.config['MYSQL_DB'] = os.environ.get("DB_DATABASE_NAME")
+app.config['MYSQL_HOST'] = os.environ.get("DB_HOST_NAME")
+app.config['MYSQL_PORT'] = int(os.environ.get("DB_PORT"))
 mysql = MySQL(app)
 # to remove special characters from string
 
@@ -31,14 +30,13 @@ def home():
     if request.method == "POST":
         details = request.form
         names = details['user_name']
-        user_name = clean(names)
+        names = clean(names)
         emails = details['email']
         messages = details['message']
         message = clean(messages)
-        print(user_name, emails, message)
         cur = mysql.connection.cursor()
         cur.execute("INSERT INTO messages (user_name, email, message) VALUES (%s, %s, %s)",
-                    (names, emails, messages))
+                    (names, emails, message))
         mysql.connection.commit()
         cur.close()
         return render_template("pages/home.html", info="Message sent sucessfully")
@@ -60,6 +58,8 @@ def dashboard():
     else:
         name1 = request.form["username"]
         pwd = request.form["password"]
+        print(name1, pwd)
+        print(os.environ.get("AUTH_USERNAME"), os.environ.get("AUTH_PASSWORD"))
         if name1 == os.environ.get("AUTH_USERNAME") and pwd == os.environ.get("AUTH_PASSWORD"):
             cur = mysql.connection.cursor()
             mysql.connection.commit()
