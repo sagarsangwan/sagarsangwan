@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .timeline-body {
+        border-left: 2px solid #646669;
+        margin: 60px 0;
+        padding: 0px 16px;
+        max-width: 800px;
+    }
+
+    .timeline-card {
+        margin-bottom: 32px;
+        margin-left: 18px;
+        position: relative;
+    }
+
+    .timeline-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .timeline-heading span {
+        /* color: #666; */
+        font-size: 14px;
+        font-style: italic;
+        margin: 10px 0;
+        width: 80px;
+        display: block;
+        flex-shrink: 0;
+        text-align: right;
+    }
+
+    .card-title {
+        margin-bottom: 0;
+        text-transform: capitalize;
+    }
+
+
+    div.timeline-card:before {
+        content: '🧐';
+        display: block;
+        width: auto;
+        height: auto;
+        border: solid 4px white;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 17px;
+        left: -49px;
+    }
+
+    div.timeline-card.emoji-bug::before {
+        content: "🐞";
+    }
+
+    div.timeline-card.emoji-feature::before {
+        content: "🚀";
+    }
+
+    div.timeline-card.emoji-docs::before {
+        content: "📔";
+    }
+
+    div.timeline-card.emoji-random::before {
+        content: "💩";
+    }
+
+    div.timeline-card.emoji-fire::before {
+        content: "🔥";
+    }
+
+    div.timeline-card.emoji-fire::before {
+        content: "🔥";
+    }
+
+    @media (max-width: 768px) {
+        .timeline-body {
+            margin: 40px auto 40px 8px;
+            width: 100%;
+            padding: 0;
+        }
+
+        div.timeline-card {
+            margin-left: 0;
+        }
+
+        div.timeline-card:before {
+            top: 14px;
+            left: -15px;
+        }
+
+        .btn {
+            font-size: 13px;
+            padding: 6px 14px;
+        }
+    }
+
+    /* div.timeline-card::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent rgb(10, 10, 10) transparent transparent;
+        border-width: 8px;
+        position: absolute;
+        left: -17px;
+        top: 10px;
+    } */
+</style>
+<div class="timeline-heading mt-5">
+    <h2 class="card-title">Work Progress</h2>
+    <a class="btn btn-dark input-feild-shadow" href="/dashboard">Create New Post</a>
+</div>
+<section class="timeline-body">
+    {% for i in records %}
+    <div class="timeline-card emoji-{{i.record_type}} ">
+        <div class="card-body">
+            <div class="timeline-heading">
+
+                <h3 class="card-title">{{i.title|safe}} </h3>
+                <span>{{i.date}} </span>
+            </div>
+            <ul>
+                {% for j in i.description %}
+                <li>{{j|safe}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% include"components/footer.html" %}
+{% endblock %}

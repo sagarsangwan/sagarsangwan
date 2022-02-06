@@ -1,5 +1,6 @@
 import os
-from flask import Flask, app, render_template, request
+from turtle import title
+from flask import Flask, app, redirect, render_template, request
 from flask_mysqldb import MySQL
 from projects.wordbook import dict
 from dotenv import load_dotenv
@@ -18,7 +19,7 @@ mysql = MySQL(app)
 
 def clean(string):
     clean_string = ""
-    valid_character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ,.!?()[]{}<>\\/'
+    valid_character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ""=,.!?()[]{}<>\\/\n\r\n\t'
     for char in string:
         if char.isalnum() or char in valid_character:
             clean_string += char
@@ -58,9 +59,9 @@ def dashboard():
     else:
         name1 = request.form["username"]
         pwd = request.form["password"]
-        print(name1, pwd)
         print(os.environ.get("AUTH_USERNAME"), os.environ.get("AUTH_PASSWORD"))
         if name1 == os.environ.get("AUTH_USERNAME") and pwd == os.environ.get("AUTH_PASSWORD"):
+
             cur = mysql.connection.cursor()
             mysql.connection.commit()
             cur.execute("SELECT * FROM messages")
@@ -71,15 +72,55 @@ def dashboard():
             return render_template("pages/login.html")
 
 
-@app.errorhandler(404)
+@app.route("/timeline", methods=["GET", "POST"])
+def timeline():
+    if request.method == "GET":
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM timeline_records ORDER BY created_at DESC")
+        result = list(cur.fetchall())
+        cur.close()
+        records = []
+        for i in result:
+            title = i[1]
+            description = list(i[2].splitlines())
+            for j in description:
+                if j == "":
+                    description.remove(j)
+                else:
+                    pass
+            record_type = i[3]
+            print(i)
+            date = i[4].strftime("%d %b %Y")
+            print(date)
+            item = {'title': title, 'description': description,
+                    'record_type': record_type, 'date': date}
+            records.append(item)
+        print(records)
+        return render_template("pages/timeline.html", records=records)
+    else:
+        details = request.form
+        title = clean(details['title'])
+        record_type = clean(details['record_type'])
+        description = clean(details['description'])
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO timeline_records (title, record_type, description) VALUES (%s, %s, %s)",
+                    (title, record_type, description))
+        mysql.connection.commit()
+        cur.close()
+        return redirect("/timeline")
+    return render_template("pages/timeline.html", lst=[["sagar", "full stack developer", "bug"], ["sagar", "full stack developer", "feature"]])
+
+
+@ app.errorhandler(404)
 def page_not_found(e):
     return render_template("pages/404.html"), 404
 
 
-@app.errorhandler(500)
+@ app.errorhandler(500)
 def internal_server_error(e):
     return render_template("pages/500.html"), 500
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+# )
