@@ -20,12 +20,12 @@
     }
 
     div.timeline-card:before {
-        content: '❤️';
+        content: '🧐';
         display: block;
         width: auto;
         height: auto;
         border: solid 4px white;
-        /* border-radius: 40%; */
+        border-radius: 50%;
         background-color: white;
         position: absolute;
         top: 9px;
@@ -33,8 +33,29 @@
     }
 
     div.timeline-card.emoji-bug::before {
-        content: "ab";
+        content: "🐞";
     }
+
+    div.timeline-card.emoji-feature::before {
+        content: "🚀";
+    }
+
+    div.timeline-card.emoji-docx::before {
+        content: "📔";
+    }
+
+    div.timeline-card.emoji-random::before {
+        content: "💩";
+    }
+
+    div.timeline-card.emoji-fire::before {
+        content: "🔥";
+    }
+
+    div.timeline-card.emoji-fire::before {
+        content: "🔥";
+    }
+
 
     /* div.timeline-card::after {
         content: '';
@@ -50,7 +71,7 @@
 </style>
 <section class="timeline-body">
     {% for i in lst %}
-    <div class="timeline-card emoji-{{ i[2]}}">
+    <div class="timeline-card emoji-">
         <!-- <div class="emoji">❤️</div> -->
         <div class="card-body">
             <div class="timeline-heading">
