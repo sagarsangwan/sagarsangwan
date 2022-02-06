@@ -30,17 +30,16 @@ def clean(string):
 def home():
     if request.method == "POST":
         details = request.form
-        title = details['title']
-        title = clean(title)
-        record_type = details['record_type']
-        deseription = details['description']
-        message = clean(deseription)
-        print(title, record_type, message)
-        # cur = mysql.connection.cursor()
-        # cur.execute("INSERT INTO timeline_records (title, record_type, message) VALUES (%s, %s, %s)",
-        #             (title, record_type, message))
-        # mysql.connection.commit()
-        # cur.close()
+        names = details['user_name']
+        names = clean(names)
+        emails = details['email']
+        messages = details['message']
+        message = clean(messages)
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO messages (user_name, email, message) VALUES (%s, %s, %s)",
+                    (names, emails, message))
+        mysql.connection.commit()
+        cur.close()
         return render_template("pages/home.html", info="Message sent sucessfully")
 
     return render_template("pages/home.html")
@@ -84,9 +83,15 @@ def timeline():
         for i in result:
             title = i[1]
             description = list(i[2].splitlines())
-            description.remove('')
+            for j in description:
+                if j == "":
+                    description.remove(j)
+                else:
+                    pass
             record_type = i[3]
+            print(i)
             date = i[4].strftime("%d %b %Y")
+            print(date)
             item = {'title': title, 'description': description,
                     'record_type': record_type, 'date': date}
             records.append(item)
@@ -118,10 +123,4 @@ def internal_server_error(e):
 
 if __name__ == "__main__":
     app.run(debug=True)
-# create table timeline_records(
-# id int not null primary key auto_increment,
-# title text not null,
-# description text not null,
-# record_type text not null,
-# created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null
 # )

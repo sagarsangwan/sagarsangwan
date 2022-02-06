@@ -3,9 +3,9 @@
 <style>
     .timeline-body {
         border-left: 2px solid #646669;
-        margin: 60px auto;
-        width: 80%;
+        margin: 60px 0;
         padding: 0px 16px;
+        max-width: 800px;
     }
 
     .timeline-card {
@@ -17,7 +17,25 @@
     .timeline-heading {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
+
+    .timeline-heading span {
+        /* color: #666; */
+        font-size: 14px;
+        font-style: italic;
+        margin: 10px 0;
+        width: 80px;
+        display: block;
+        flex-shrink: 0;
+        text-align: right;
+    }
+
+    .card-title {
+        margin-bottom: 0;
+        text-transform: capitalize;
+    }
+
 
     div.timeline-card:before {
         content: '🧐';
@@ -28,7 +46,7 @@
         border-radius: 50%;
         background-color: white;
         position: absolute;
-        top: 9px;
+        top: 17px;
         left: -49px;
     }
 
@@ -56,6 +74,27 @@
         content: "🔥";
     }
 
+    @media (max-width: 768px) {
+        .timeline-body {
+            margin: 40px auto 40px 8px;
+            width: 100%;
+            padding: 0;
+        }
+
+        div.timeline-card {
+            margin-left: 0;
+        }
+
+        div.timeline-card:before {
+            top: 14px;
+            left: -15px;
+        }
+
+        .btn {
+            font-size: 13px;
+            padding: 6px 14px;
+        }
+    }
 
     /* div.timeline-card::after {
         content: '';
@@ -79,7 +118,7 @@
         <div class="card-body">
             <div class="timeline-heading">
 
-                <h6 class="card-title">{{i.title}} </h6>
+                <h3 class="card-title">{{i.title}} </h3>
                 <span>{{i.date}} </span>
             </div>
             <ul>
