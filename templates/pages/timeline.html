@@ -1,10 +1,63 @@
 {% extends "base.html" %}
 {% block content %}
+<style>
+    .timeline-body {
+        border-left: 2px solid #646669;
+        margin: 60px auto;
+        width: 80%;
+        padding: 0px 16px;
+    }
+
+    .timeline-card {
+        margin-bottom: 32px;
+        margin-left: 18px;
+        position: relative;
+    }
+
+    .timeline-heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div.timeline-card:before {
+        content: '❤️';
+        display: block;
+        width: auto;
+        height: auto;
+        border: solid 4px white;
+        /* border-radius: 40%; */
+        background-color: white;
+        position: absolute;
+        top: 9px;
+        left: -49px;
+    }
+
+    div.timeline-card.emoji-bug::before {
+        content: "ab";
+    }
+
+    /* div.timeline-card::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent rgb(10, 10, 10) transparent transparent;
+        border-width: 8px;
+        position: absolute;
+        left: -17px;
+        top: 10px;
+    } */
+</style>
 <section class="timeline-body">
     {% for i in lst %}
-    <div class="timeline-card card ">
+    <div class="timeline-card emoji-{{ i[2]}}">
+        <!-- <div class="emoji">❤️</div> -->
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
+            <div class="timeline-heading">
+
+                <h6 class="card-title">Special title treatment</h6>
+                <span>2daysago</span>
+            </div>
             <ul>
                 <li>{{i[0]}}</li>
                 <li>{{i[1]}}</li>
@@ -16,4 +69,5 @@
     </div>
     {% endfor %}
 </section>
+{% include"components/footer.html" %}
 {% endblock %}
