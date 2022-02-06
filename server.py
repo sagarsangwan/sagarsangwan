@@ -84,13 +84,14 @@ def timeline():
         for i in result:
             title = i[1]
             description = list(i[2].splitlines())
+            description.remove('')
             record_type = i[3]
-            date = i[4]
+            date = i[4].strftime("%d %b %Y")
             item = {'title': title, 'description': description,
                     'record_type': record_type, 'date': date}
             records.append(item)
         print(records)
-        return render_template("pages/timeline.html", lst=[["sagar", "full stack developer", "bug"], ["sagar", "full stack developer", "feature"]])
+        return render_template("pages/timeline.html", records=records)
     else:
         details = request.form
         title = clean(details['title'])

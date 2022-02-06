@@ -40,7 +40,7 @@
         content: "🚀";
     }
 
-    div.timeline-card.emoji-docx::before {
+    div.timeline-card.emoji-docs::before {
         content: "📔";
     }
 
@@ -74,21 +74,18 @@
     <a class="btn btn-dark input-feild-shadow" href="/dashboard">Create New Post</a>
 </div>
 <section class="timeline-body">
-    {% for i in lst %}
-    <div class="timeline-card emoji-">
-        <!-- <div class="emoji">❤️</div> -->
+    {% for i in records %}
+    <div class="timeline-card emoji-{{i.record_type}} ">
         <div class="card-body">
             <div class="timeline-heading">
 
-                <h6 class="card-title">Special title treatment</h6>
-                <span>2daysago</span>
+                <h6 class="card-title">{{i.title}} </h6>
+                <span>{{i.date}} </span>
             </div>
             <ul>
-                <li>{{i[0]}}</li>
-                <li>{{i[1]}}</li>
-                <li>{{i[0]}}</li>
-                <li>{{i[1]}}</li>
-
+                {% for j in i.description %}
+                <li>{{j}}</li>
+                {% endfor %}
             </ul>
         </div>
     </div>
