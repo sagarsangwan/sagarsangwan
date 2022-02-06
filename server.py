@@ -1,5 +1,6 @@
 import os
-from flask import Flask, app, render_template, request
+from turtle import title
+from flask import Flask, app, redirect, render_template, request
 from flask_mysqldb import MySQL
 from projects.wordbook import dict
 from dotenv import load_dotenv
@@ -29,16 +30,17 @@ def clean(string):
 def home():
     if request.method == "POST":
         details = request.form
-        names = details['user_name']
-        names = clean(names)
-        emails = details['email']
-        messages = details['message']
-        message = clean(messages)
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO messages (user_name, email, message) VALUES (%s, %s, %s)",
-                    (names, emails, message))
-        mysql.connection.commit()
-        cur.close()
+        title = details['title']
+        title = clean(title)
+        record_type = details['record_type']
+        deseription = details['description']
+        message = clean(deseription)
+        print(title, record_type, message)
+        # cur = mysql.connection.cursor()
+        # cur.execute("INSERT INTO timeline_records (title, record_type, message) VALUES (%s, %s, %s)",
+        #             (title, record_type, message))
+        # mysql.connection.commit()
+        # cur.close()
         return render_template("pages/home.html", info="Message sent sucessfully")
 
     return render_template("pages/home.html")
@@ -58,9 +60,9 @@ def dashboard():
     else:
         name1 = request.form["username"]
         pwd = request.form["password"]
-        print(name1, pwd)
         print(os.environ.get("AUTH_USERNAME"), os.environ.get("AUTH_PASSWORD"))
         if name1 == os.environ.get("AUTH_USERNAME") and pwd == os.environ.get("AUTH_PASSWORD"):
+
             cur = mysql.connection.cursor()
             mysql.connection.commit()
             cur.execute("SELECT * FROM messages")
@@ -71,20 +73,41 @@ def dashboard():
             return render_template("pages/login.html")
 
 
-@app.route("/timeline")
+@app.route("/timeline", methods=["GET", "POST"])
 def timeline():
+    if request.method == "GET":
+        return render_template("pages/timeline.html", lst=[["sagar", "full stack developer", "bug"], ["sagar", "full stack developer", "feature"]])
+    else:
+        details = request.form
+        title = clean(details['title'])
+        record_type = clean(details['record_type'])
+        description = clean(details['description'])
+        print(title, record_type, description)
+        # cur = mysql.connection.cursor()
+        # cur.execute("INSERT INTO deseription (user_name, record_type, message) VALUES (%s, %s, %s)",
+        #             (title, record_type, description))
+        # mysql.connection.commit()
+        # cur.close()
+        return redirect("/timeline")
     return render_template("pages/timeline.html", lst=[["sagar", "full stack developer", "bug"], ["sagar", "full stack developer", "feature"]])
 
 
-@app.errorhandler(404)
+@ app.errorhandler(404)
 def page_not_found(e):
     return render_template("pages/404.html"), 404
 
 
-@app.errorhandler(500)
+@ app.errorhandler(500)
 def internal_server_error(e):
     return render_template("pages/500.html"), 500
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+# create table timeline_records(
+# id int not null primary key auto_increment,
+# title text not null,
+# description text not null,
+# record_type text not null,
+# created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null
+# )

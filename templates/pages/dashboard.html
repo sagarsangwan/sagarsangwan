@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<form method="POST" class="row mb-5" action="">
+<form method="POST" class="row mb-5" action="/timeline">
     <div class="col-12">
         <h1 class="padding-bottom-small">Add Work Entry For Today</h1>
 
@@ -13,7 +13,7 @@
             aria-label="title">
     </div>
     <div class="col-12 padding-bottom-small">
-        <select class="form-select input-feild-shadow" aria-label="Default select example">
+        <select name="record_type" class="form-select input-feild-shadow" aria-label="Default select example">
             <option selected value="default">default</option>
             <option value="bug">bug</option>
             <option value="feature">feature</option>
