@@ -71,6 +71,11 @@ def dashboard():
             return render_template("pages/login.html")
 
 
+@app.route("/timeline")
+def timeline():
+    return render_template("pages/timeline.html")
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("pages/404.html"), 404
