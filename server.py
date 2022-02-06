@@ -19,7 +19,7 @@ mysql = MySQL(app)
 
 def clean(string):
     clean_string = ""
-    valid_character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ,.!?()[]{}<>\\/\n\r\n\t'
+    valid_character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ""=,.!?()[]{}<>\\/\n\r\n\t'
     for char in string:
         if char.isalnum() or char in valid_character:
             clean_string += char

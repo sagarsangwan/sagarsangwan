@@ -118,12 +118,12 @@
         <div class="card-body">
             <div class="timeline-heading">
 
-                <h3 class="card-title">{{i.title}} </h3>
+                <h3 class="card-title">{{i.title|safe}} </h3>
                 <span>{{i.date}} </span>
             </div>
             <ul>
                 {% for j in i.description %}
-                <li>{{j}}</li>
+                <li>{{j|safe}}</li>
                 {% endfor %}
             </ul>
         </div>
