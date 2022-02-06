@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
+<section class="timeline-body">
+    <div>
+        {% for i in lst %}
+        <div class="card time">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <ul>
+                    <li>{{i[0]}}</li>
+                    <li>{{i[1]}}</li>
+                    <li>{{i[0]}}</li>
+                    <li>{{i[1]}}</li>
 
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

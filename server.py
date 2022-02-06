@@ -73,7 +73,7 @@ def dashboard():
 
 @app.route("/timeline")
 def timeline():
-    return render_template("pages/timeline.html")
+    return render_template("pages/timeline.html", lst=[["sagar", "full stack developer"], ["sagar", "full stack developer"]])
 
 
 @app.errorhandler(404)

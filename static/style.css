@@ -105,3 +105,9 @@ a:hover {
 .top-margin{
     margin-top: 100px;
 }
+.timeline-body{
+    border-left: 2px solid rgb(20, 20, 20);
+    margin: 90px auto;
+    width: 360px;
+    padding: 0px 16px;
+}
