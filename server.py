@@ -1,5 +1,4 @@
 import os
-from turtle import title
 from flask import Flask, app, redirect, render_template, request
 from flask_mysqldb import MySQL
 from projects.wordbook import dict
