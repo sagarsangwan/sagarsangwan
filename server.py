@@ -19,7 +19,7 @@ mysql = MySQL(app)
 
 def clean(string):
     clean_string = ""
-    valid_character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ,.!?()[]{}<>\\/'
+    valid_character = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ,.!?()[]{}<>\\/\n\r\n\t'
     for char in string:
         if char.isalnum() or char in valid_character:
             clean_string += char
@@ -78,9 +78,18 @@ def timeline():
     if request.method == "GET":
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM timeline_records ORDER BY created_at DESC")
-        result = list(cur.fetchall())[0]
+        result = list(cur.fetchall())
         cur.close()
-        print(result)
+        records = []
+        for i in result:
+            title = i[1]
+            description = list(i[2].splitlines())
+            record_type = i[3]
+            date = i[4]
+            item = {'title': title, 'description': description,
+                    'record_type': record_type, 'date': date}
+            records.append(item)
+        print(records)
         return render_template("pages/timeline.html", lst=[["sagar", "full stack developer", "bug"], ["sagar", "full stack developer", "feature"]])
     else:
         details = request.form
