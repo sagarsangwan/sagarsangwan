@@ -76,18 +76,22 @@ def dashboard():
 @app.route("/timeline", methods=["GET", "POST"])
 def timeline():
     if request.method == "GET":
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM timeline_records ORDER BY created_at DESC")
+        result = list(cur.fetchall())[0]
+        cur.close()
+        print(result)
         return render_template("pages/timeline.html", lst=[["sagar", "full stack developer", "bug"], ["sagar", "full stack developer", "feature"]])
     else:
         details = request.form
         title = clean(details['title'])
         record_type = clean(details['record_type'])
         description = clean(details['description'])
-        print(title, record_type, description)
-        # cur = mysql.connection.cursor()
-        # cur.execute("INSERT INTO deseription (user_name, record_type, message) VALUES (%s, %s, %s)",
-        #             (title, record_type, description))
-        # mysql.connection.commit()
-        # cur.close()
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO timeline_records (title, record_type, description) VALUES (%s, %s, %s)",
+                    (title, record_type, description))
+        mysql.connection.commit()
+        cur.close()
         return redirect("/timeline")
     return render_template("pages/timeline.html", lst=[["sagar", "full stack developer", "bug"], ["sagar", "full stack developer", "feature"]])
 
