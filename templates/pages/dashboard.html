@@ -1,6 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+
+<form method="POST" class="row mb-5" action="">
+    <div class="col-12">
+        <h1 class="padding-bottom-small">Add Work Entry For Today</h1>
+
+    </div>
+    <div class="col-12 padding-bottom-small">
+        <input type="text" name="title" required class="form-control input-feild-shadow" placeholder="title"
+            aria-label="title">
+    </div>
+    <div class="col-12 padding-bottom-small">
+        <select class="form-select input-feild-shadow" aria-label="Default select example">
+            <option selected value="default">default</option>
+            <option value="bug">bug</option>
+            <option value="feature">feature</option>
+            <option value="docs">docs</option>
+            <option value="random">random</option>
+            <option value="fire">fire</option>
+
+        </select>
+    </div>
+    <div class="col-12 padding-bottom-small">
+        <textarea rows="4" class="form-control input-feild-shadow" placeholder="what have you achieved today?"
+            name="description"></textarea>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-dark input-feild-shadow" type="submit">Submit</button>
+        <i>{{info}}</i>
+
+    </div>
+</form>
 <div class="row height-adjust">
     <div class="col">
         <h1 class="padding-bottom-small">Messages</h1>
