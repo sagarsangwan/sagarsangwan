@@ -125,6 +125,9 @@
                 {% for j in i.description %}
                 <li>{{j|safe}}</li>
                 {% endfor %}
+                {% if i.image %}
+                <li><img src="{{i.image}}" alt=""></li>
+                {% endif %}
             </ul>
         </div>
     </div>
