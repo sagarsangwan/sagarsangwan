@@ -90,9 +90,9 @@ def timeline():
             record_type = i[3]
             print(i)
             date = i[4].strftime("%d %b %Y")
-            print(date)
+            image = i[5]
             item = {'title': title, 'description': description,
-                    'record_type': record_type, 'date': date}
+                    'record_type': record_type, 'date': date, 'image': image}
             records.append(item)
         print(records)
         return render_template("pages/timeline.html", records=records)
@@ -101,9 +101,11 @@ def timeline():
         title = clean(details['title'])
         record_type = clean(details['record_type'])
         description = clean(details['description'])
+        image = details['image_link']
+        print(image)
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO timeline_records (title, record_type, description) VALUES (%s, %s, %s)",
-                    (title, record_type, description))
+        cur.execute("INSERT INTO timeline_records (title, record_type, description, image_link) VALUES (%s, %s, %s, %s)",
+                    (title, record_type, description, image))
         mysql.connection.commit()
         cur.close()
         return redirect("/timeline")
