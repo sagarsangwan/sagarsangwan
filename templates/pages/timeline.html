@@ -74,7 +74,16 @@
         content: "🔥";
     }
 
+    .timeline-image {
+        max-width: 50%;
+        margin-top: 20px;
+    }
+
     @media (max-width: 768px) {
+        .timeline-image {
+            max-width: 70%;
+        }
+
         .timeline-body {
             margin: 40px auto 40px 8px;
             width: 100%;
@@ -126,7 +135,7 @@
                 <li>{{j|safe}}</li>
                 {% endfor %}
                 {% if i.image %}
-                <li><img src="{{i.image}}" alt=""></li>
+                <img src="{{i.image}}" class="img-thumbnail timeline-image">
                 {% endif %}
             </ul>
         </div>
