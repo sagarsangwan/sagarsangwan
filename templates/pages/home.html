@@ -189,7 +189,7 @@
                     <a href="https://kids-meal-management.herokuapp.com/" target="blank"
                         class="btn button btn-dark">Visit
                         site</a>
-                    <a href="https://github.com/sagarsangwan/kids_meal_managment"
+                    <a href="https://github.com/sagarsangwan/kids_meal_managment" target="blank"
                         class="btn button mx-5 btn-dark">Source
                         Code</a>
                 </div>
@@ -214,22 +214,54 @@
                     <a href="https://recordsmanager.herokuapp.com/" target="blank" class="btn button btn-dark">Visit
                         site</a>
 
-                    <a href="https://github.com/sagarsangwan/records-manager" class="btn button mx-5 btn-dark">Source
+                    <a target="blank" href="https://github.com/sagarsangwan/records-manager"
+                        class="btn button mx-5 btn-dark">Source
                         Code</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-md-9 col-lg-4 col-padding">
+    <div class="col-xs-12 col-md-9 col-lg-6 col-padding">
         <div class="card">
+            <div class="card-body">
+                <h2 class="card-title"> Web Scraping</h2>
+                <p class="card-text"> <strong> Scraping</strong><a href="https://www.amazon.com/"> amazon</a> for
+                    product
+                    information like name, price, image and details.</p>
+                <ul class="text-start">
+                    <li>Read csv of product ASIN code, country code and generate amazon web links.
+                    </li>
+                    <li>Fetch page html using requests module and parse it using BeautifulSoup.</li>
+                    <ul>
+                        <li>Get product details using id and/or class selectors</li>
+                        <li>If element is not present try another id and/or class selectors </li>
+                        <li>Clean all data and remove invalid characters</li>
+                        <li>Generate a dictionary having:
+                            Product Title
+                            Product Image Link
+                            Product Price
+                            Product Details</li>
+                    </ul>
+                    <li>Export product details to JSON file and MySQL database.</li>
+                </ul>
+                <div class="mt-5 text-end">
+                    <a href="https://colab.research.google.com/drive/18YtUbh9oqM98Wfm1dGnScxWG7X3C_1MX?usp=sharing"
+                        target="blank" class="btn button mx-5 btn-dark">Google Colab </a>
+                    <a href="https://github.com/sagarsangwan/web-scraping-Credicxo" target="blank"
+                        class="btn button mx-5 btn-dark">Source
+                        Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 col-lg-6 col-padding">
+        <div class="card mb-4">
             <div class="card-body">
                 <h5 class="card-title">Dictionary</h5>
                 <p class="card-text"> Search a word in english and find their meaning </p>
                 <a href="/dictionary" class="btn button btn-dark">Explore</a>
             </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-md-9 col-lg-4 col-padding">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Space Shootter Game</h5>
