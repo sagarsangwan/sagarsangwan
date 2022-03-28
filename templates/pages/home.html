@@ -73,7 +73,9 @@
                 </p>
             </div>
         </div>
+
         <div class="row justify-content-center">
+
             <div class="col-xs-12 col-md-4 col-padding">
                 <h5><i class="fas fa-database"></i> MySQL</h5>
                 <p>Mysql is faster than other database<br>
@@ -124,6 +126,14 @@
                 </p>
             </div>
         </div>
+        <div class="row justify-content-center">
+            <div class="col-xs-12 col-md-4 col-padding pb-4">
+                <h5> <img src="https://static.djangoproject.com/img/logos/django-logo-positive.svg" width="74"></h5>
+                <p> django is a python framework
+                    I am using it for web development.
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 <div class="row pt-5 height-adjust mt-5 justify-content-center">
@@ -161,16 +171,97 @@
 
 
 <div class="row justify-content-center">
-    <div class="col-xs-12 col-md-9 col-lg-4 col-padding">
+    <div class="col-xs-12 col-md-9 col-lg-6 col-padding">
         <div class="card">
+            <div class="card-body">
+                <h2 class="card-title"> Kids Meal Management</h2>
+                <p class="card-text"> <strong> Django</strong> admin dashboard for children meals management</p>
+                <ul class="text-start">
+                    <li>Sign up and then sign in to your Admin/Parent account.
+                    </li>
+                    <li>Add kids information for which meals need to be managed.</li>
+                    <li>Add meals entries.
+                    </li>
+                    <li>If food group is Unkown email will be sent to Parent's Email as given in Kids details.
+                    </li>
+                </ul>
+                <div class="mt-5 text-end">
+                    <a href="https://kids-meal-management.herokuapp.com/" target="blank"
+                        class="btn button btn-dark">Visit
+                        site</a>
+                    <a href="https://github.com/sagarsangwan/kids_meal_managment" target="blank"
+                        class="btn button mx-5 btn-dark">Source
+                        Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 col-lg-6 col-padding">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title"> Records Manager</h2>
+                <p class="card-text"> <strong> Flask</strong> application to accept student registration details from
+                    different user.</p>
+                <ul class="text-start">
+                    <li>Sign up and then sign in to a new account.
+                    </li>
+                    <li>Perform CRUD(Create, Read, Update and Delete) operations on student records based on logged in
+                        user.</li>
+                    <li>Filter results based on search criteria.
+                    </li>
+                </ul>
+                <div class="mt-5 text-end">
+                    <a href="https://recordsmanager.herokuapp.com/" target="blank" class="btn button btn-dark">Visit
+                        site</a>
+
+                    <a target="blank" href="https://github.com/sagarsangwan/records-manager"
+                        class="btn button mx-5 btn-dark">Source
+                        Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 col-lg-6 col-padding">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title"> Web Scraping</h2>
+                <p class="card-text"> <strong> Scraping</strong><a href="https://www.amazon.com/"> amazon</a> for
+                    product
+                    information like name, price, image and details.</p>
+                <ul class="text-start">
+                    <li>Read csv of product ASIN code, country code and generate amazon web links.
+                    </li>
+                    <li>Fetch page html using requests module and parse it using BeautifulSoup.</li>
+                    <ul>
+                        <li>Get product details using id and/or class selectors</li>
+                        <li>If element is not present try another id and/or class selectors </li>
+                        <li>Clean all data and remove invalid characters</li>
+                        <li>Generate a dictionary having:
+                            Product Title
+                            Product Image Link
+                            Product Price
+                            Product Details</li>
+                    </ul>
+                    <li>Export product details to JSON file and MySQL database.</li>
+                </ul>
+                <div class="mt-5 text-end">
+                    <a href="https://colab.research.google.com/drive/18YtUbh9oqM98Wfm1dGnScxWG7X3C_1MX?usp=sharing"
+                        target="blank" class="btn button mx-5 btn-dark">Google Colab </a>
+                    <a href="https://github.com/sagarsangwan/web-scraping-Credicxo" target="blank"
+                        class="btn button mx-5 btn-dark">Source
+                        Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 col-lg-6 col-padding">
+        <div class="card mb-4">
             <div class="card-body">
                 <h5 class="card-title">Dictionary</h5>
                 <p class="card-text"> Search a word in english and find their meaning </p>
                 <a href="/dictionary" class="btn button btn-dark">Explore</a>
             </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-md-9 col-lg-4 col-padding">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Space Shootter Game</h5>
@@ -180,8 +271,6 @@
             </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 <!-- <div class="container">
     <div class="row justify-content-center">
