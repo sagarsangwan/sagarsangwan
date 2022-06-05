@@ -2,6 +2,8 @@
 
 I am **Sagar**.
 
-I don't know what I am doing, but I love python 🐍
 
-[Visit my portfolio now](https://sagarsangwan.herokuapp.com/)
+I started learning **JavaScript** with the help of *Javascript30*
+
+<!-- [Visit my portfolio now](https://sagarsangwan.herokuapp.com/)
+ -->
