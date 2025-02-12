@@ -17,6 +17,9 @@
 
 ## 🚀 My Projects
 
+### [Personal Portfolio](https://sagarsangwan.vercel.app/)
+My Personal Portfolio to showcase my work.
+
 ### [Wander Smart](https://wander-smart.vercel.app/)
 A smart trip-planning tool to help users create seamless travel experiences.
 
@@ -29,14 +32,14 @@ A platform for students to access previous year question papers using web scrapi
 
 ## 📢 Blogs & Content
 I regularly write about web development, AI, and tech trends on:
-- **Medium:** [The Modern Frontend](https://medium.com/@sagarsangwan)
+- **Medium:** [Sagar Sangwan](https://medium.com/@sagarsangwan)
 - **Personal Blog:** [sagarsangwan.vercel.app](https://sagarsangwan.vercel.app/blogs)
 - **LinkedIn:** [Sagar Sangwan](https://www.linkedin.com/in/sagarsangwann/)
 
 ---
 
 ## 📬 Let's Connect!
-- **Twitter/X:** [@yourhandle](https://twitter.com/iamsagarsangwan)
+- **Twitter/X:** [Sagar Sangwan](https://twitter.com/iamsagarsangwan)
 - **LinkedIn:** [Sagar Sangwan](https://www.linkedin.com/in/sagarsangwan/)
 - **GitHub:** [Sagar Sangwan](https://github.com/sagarsangwan)
 
