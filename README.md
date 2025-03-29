@@ -26,7 +26,8 @@ A smart trip-planning tool to help users create seamless travel experiences.
 ### [Chai and Study](https://chai-and-study.vercel.app/)
 A platform for students to access previous year question papers using web scraping.
 
-
+### [TeachOthersOnline](https://teachothersonline.vercel.app/)
+A one-to-one class platform where teachers and students connect for personalized learning.
 
 ---
 
@@ -38,7 +39,7 @@ I regularly write about web development, AI, and tech trends on:
 
 ---
 
-## 📬 Let's Connect!
+## 📬l Let's Connect!
 - **Twitter/X:** [Sagar Sangwan](https://twitter.com/iamsagarsangwan)
 - **LinkedIn:** [Sagar Sangwan](https://www.linkedin.com/in/sagarsangwan/)
 - **GitHub:** [Sagar Sangwan](https://github.com/sagarsangwan)
