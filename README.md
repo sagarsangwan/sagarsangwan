@@ -2,7 +2,7 @@
 
 I’m a **Full-Stack Developer** focused on building end-to-end web applications and AI-driven tools. I enjoy bridging the gap between clean, interactive frontends and scalable backends.
 
-[**📄 View My Resume**](https://drive.google.com/file/d/1b6kRG0DW6h8qJeJEUOqPQzXmVmYUy9pg/view) | [**🌐 Visit Portfolio**](https://sagarsangwan.vercel.app)
+[**📄 View My Resume**](https://drive.google.com/file/d/1b6kRG0DW6h8qJeJEUOqPQzXmVmYUy9pg/view) | [**🌐 Visit Portfolio**](https://sagarsangwan.dev)
 
 ---
 
@@ -27,14 +27,14 @@ I’m a **Full-Stack Developer** focused on building end-to-end web applications
 ### ✍️ Writing & Thoughts
 
 I like sharing what I learn. You can find my articles here:
-- **[Technical Blog](https://sagarsangwan.vercel.app/blogs)**
+- **[Technical Blog](https://blogs.sagarsangwan.dev)**
 - **[Medium](https://medium.com/@sagarsangwan)**
 
 ---
 
 ### 🤝 Connect with Me
 
-- **LinkedIn:** [/in/sagarsangwan](https://www.linkedin.com/in/sagarsangwan/)
+- **LinkedIn:** [/in/sagarsangwan](https://www.linkedin.com/in/sangwansagar/)
 - **Twitter / X:** [@iamsagarsangwan](https://twitter.com/iamsagarsangwan)
 
 ---
