@@ -1,48 +1,41 @@
-# Hi there, I'm Sagar Sangwan! 👋
+# Hi, I’m Sagar Sangwan 👋
 
-🚀 Developer | Blogger | YouTuber | Tech Enthusiast  
-🎯 Passionate about building innovative web applications, AI-powered tools, and sharing knowledge.
+I’m a **Full-Stack Developer** focused on building end-to-end web applications and AI-driven tools. I enjoy bridging the gap between clean, interactive frontends and scalable backends.
 
----
-
-## 🛠 Tech Stack
-
-- **Frontend:** React.js, Next.js, TailwindCSS, ShadCN UI
-- **Backend:** Flask, Django, RestFrameWork
-- **Databases:** Prisma, PostgreSQL, MongoDB
-- **AI & ML:** OpenAI API, Google APIs, AI-powered tools
-- **Deployment:** Vercel, Heroku, AWS
+[**📄 View My Resume**](https://drive.google.com/file/d/1b6kRG0DW6h8qJeJEUOqPQzXmVmYUy9pg/view) | [**🌐 Visit Portfolio**](https://sagarsangwan.vercel.app)
 
 ---
 
-## 🚀 My Projects
+### 🛠 Tech Stack
 
-### [Personal Portfolio](https://sagarsangwan.vercel.app/)
-My Personal Portfolio to showcase my work.
-
-### [Wander Smart](https://wander-smart.vercel.app/)
-A smart trip-planning tool to help users create seamless travel experiences.
-
-### [Chai and Study](https://chai-and-study.vercel.app/)
-A platform for students to access previous year question papers using web scraping.
-
-### [TeachOthersOnline](https://teachothersonline.vercel.app/)
-A one-to-one class platform where teachers and students connect for personalized learning.
+- **Frontend:** Next.js, React, TailwindCSS, ShadCN UI
+- **Backend:** Django (DRF), FastAPI, Flask, REST APIs
+- **Database & Infra:** PostgreSQL, MongoDB, Prisma, Docker, AWS
+- **AI Integration:** OpenAI API, Google Cloud APIs
 
 ---
 
-## 📢 Blogs & Content
-I regularly write about web development, AI, and tech trends on:
-- **Medium:** [Sagar Sangwan](https://medium.com/@sagarsangwan)
-- **Personal Blog:** [sagarsangwan.vercel.app](https://sagarsangwan.vercel.app/blogs)
-- **LinkedIn:** [Sagar Sangwan](https://www.linkedin.com/in/sagarsangwann/)
+### 🚀 Projects & Work
+
+* **[CreatorCopilot](https://github.com/sagarsangwan/creatorcopilot)** – AI-powered content generation and automation.
+* **[TeachOthersOnline](https://teachothersonline.vercel.app)** – Platform for online educators.
+* **[Wander Smart](https://wander-smart.vercel.app)** – Intelligent travel planning app.
+* **[Chai and Study](https://chai-and-study.vercel.app)** – A digital space for focused learning.
 
 ---
 
-## 📬l Let's Connect!
-- **Twitter/X:** [Sagar Sangwan](https://twitter.com/iamsagarsangwan)
-- **LinkedIn:** [Sagar Sangwan](https://www.linkedin.com/in/sagarsangwan/)
-- **GitHub:** [Sagar Sangwan](https://github.com/sagarsangwan)
+### ✍️ Writing & Thoughts
 
-💡 Feel free to reach out for collaborations, open-source projects, or just to say hi!
+I like sharing what I learn. You can find my articles here:
+- **[Technical Blog](https://sagarsangwan.vercel.app/blogs)**
+- **[Medium](https://medium.com/@sagarsangwan)**
 
+---
+
+### 🤝 Connect with Me
+
+- **LinkedIn:** [/in/sagarsangwan](https://www.linkedin.com/in/sagarsangwan/)
+- **Twitter / X:** [@iamsagarsangwan](https://twitter.com/iamsagarsangwan)
+
+---
+*Built with ❤️ and a lot of Chai.*
